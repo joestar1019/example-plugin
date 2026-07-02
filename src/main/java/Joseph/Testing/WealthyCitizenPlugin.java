@@ -40,7 +40,6 @@ public class WealthyCitizenPlugin extends Plugin {
 	@Inject
 	private OverlayManager overlay_manager;
 
-
 	@Inject
 	private WealthyCitizenOverlay wealthy_citizen_overlay;
 
@@ -60,10 +59,7 @@ public class WealthyCitizenPlugin extends Plugin {
 		Player p = client.getLocalPlayer();
 		WorldPoint wl = p.getWorldLocation();
 		// Civitas chunk location
-		if (wl.getRegionID() == 6704) {
-			return true;
-		}
-		return false;
+		return wl.getRegionID() == 6704;
 	}
 
 	@Provides
