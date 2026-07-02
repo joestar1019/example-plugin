@@ -33,6 +33,7 @@ public class WealthyCitizenOverlay extends Overlay {
         if (!config.drawTile() && !config.drawHitbox() || plugin.distracted_citizen == null) {
             return null;
         }
+
         Polygon tile_poly = plugin.distracted_citizen.getCanvasTilePoly();
         Shape hitbox = plugin.distracted_citizen.getConvexHull();
         Color color = config.highlightColor();
@@ -44,7 +45,6 @@ public class WealthyCitizenOverlay extends Overlay {
         if (config.drawHitbox() && hitbox != null) {
             OverlayUtil.renderPolygon(graphics, hitbox, color);
         }
-
         return null;
     }
 }
